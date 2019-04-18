@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.chainsaw.Main;
+
 import com.revature.users.Users;
 import com.revature.utility.ConnectionFactory;
 
@@ -23,17 +25,18 @@ public class UsersDaoImpl implements UsersDao {
 			//execute the statement, all matched records can be found in the resultset
 			ResultSet rs = stmt.executeQuery("SELECT * FROM users");
 			
-			//populate our list of todos from the resultset
+			//populate our list of Users from the resultset
 			while(rs.next()) {
-				users.add(new Users(rs.getInt("id"), rs.getString("firstname"), rs.getString("lastname"), rs.getString("login"), rs.getString("password"), rs.getString("email"), rs.getString("usertype")));
+				users.add(new Users(rs.getInt("id"), rs.getString("firstname"), rs.getString("lastname"), rs.getString("email"), rs.getString("password"), rs.getString("usertype"), rs.getString("logininfo")));
 			}
 			
-			//return our todos so that the application can further manipulate
+			//return our Users so that the application can further manipulate
 			return users;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return null;
+
 	}
 
 	@Override
@@ -49,7 +52,7 @@ public class UsersDaoImpl implements UsersDao {
 		try (Connection conn = ConnectionFactory.getConnection()){
 			//initialize our insert statement
 			PreparedStatement stmt = 
-					conn.prepareStatement("INSERT INTO users (id, firstname, lastname, login, password, email, usertype) Values(?,?,?,?,?,?,?)");
+					conn.prepareStatement("INSERT INTO users (id, firstname, lastname, logininfo, password, email, usertype) Values(?,?,?,?,?,?,?)");
 			//set the values of our insert statement to help prevent SQL injection
 			stmt.setInt(1,  users.getId());
 			stmt.setString(2, users.getFirstname());

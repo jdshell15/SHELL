@@ -1,16 +1,28 @@
 package com.revature.utility;
 
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.revature.dao.UsersDaoImpl;
+import com.revature.service.UsersServiceImpl;
+import com.revature.users.Users;
 
 import java.sql.Connection;
 
 
 public class ConnectionFactory {
-    private final static String username = "homeuser";
-    private final static String password = "password2";
+    private final static String username = "jdshell";
+    private final static String password = "hello";
     private final static String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//    public static void main(String[] args) {
+//		Users john = new Users(15, "john","shell","mrshell", "mrshell","mrshell@gmail.com","users" );
+//		UsersServiceImpl test = new UsersServiceImpl();
+//		test.createUsers(john);
+//	}
     
+
     private ConnectionFactory() {
     }
 
@@ -29,3 +41,5 @@ public class ConnectionFactory {
         }
     }
 }
+    
+    
