@@ -1,4 +1,4 @@
-package jbdc;
+package com.revature.users;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
