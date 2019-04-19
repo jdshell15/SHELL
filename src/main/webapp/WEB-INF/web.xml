@@ -42,6 +42,12 @@
   	<description></description>
   	<servlet-class>com.revature.servlets.UserUpdateServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UserReimbursementServlet</servlet-name>
+  	<display-name>UserReimbursementServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.UserReimbursementServlet</servlet-class>
+  </servlet>
 
 
   <servlet-mapping>
@@ -71,6 +77,10 @@
   <servlet-mapping>
   	<servlet-name>UserUpdateServlet</servlet-name>
   	<url-pattern>/UserUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserReimbursementServlet</servlet-name>
+  	<url-pattern>/UserReimbursementServlet</url-pattern>
   </servlet-mapping>
   
 </web-app>

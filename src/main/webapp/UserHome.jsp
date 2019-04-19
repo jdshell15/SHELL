@@ -58,46 +58,44 @@
 			<thead>
 				<tr>
 
-					<th>ID</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Email</th>
-					<th>Password</th>
-					<th>User Type</th>
-					<th>Login Info</th>
-
+					<th>Request ID</th>
+					<th>Amount</th>
+					<th>Description</th>
+					<th>Status</th>
+					<th>Manager ID</th>
+				
 
 				</tr>
 			</thead>
 			<tbody id="userTable"></tbody>
 		</table>
-
+<br><br>
 
 	</div>
 
 	<div id="login">
 		<form method="post" action="/project1.0/UserUpdateServlet">
-			<input class="form-control" type="text" name="firstname"
-				placeholder="Enter First Name" style="text-align: center"> <input
+			<input class="col-12"class="form-control" type="text" name="firstname"
+				placeholder="Enter First Name" style="text-align: center"> <input class="col-12"
 				class="form-control" type="text" name="lastname"
-				placeholder="Enter Last Name" style="text-align: center"> <input
+				placeholder="Enter Last Name" style="text-align: center"> <input class="col-12"
 				class="form-control" type="password" name="password"
-				placeholder="Enter Password" style="text-align: center"> <input
+				placeholder="Enter Password" style="text-align: center"> <input class="col-12"
 				class="form-control" type="text" name="login"
 				placeholder="Enter Login Name" style="text-align: center">
 			<button>Update</button>
 		</form>
 	</div>
-<br><br><br>
-<form>
+
+<form method="post" action="/project1.0/UserReimbursementServlet">
 <div class="container-fluid" style="align:center">
         <div class="row">
             <div class="col-3"></div>
             <div class="col-12">
                 <form>
                		
-                    <input type="number" style="text-align: center" name="UserId" placeholder="ID">
-					<input type="number" style="text-align: center" name="amount" placeholder="Requested Amount">
+                    <input type="text" style="text-align: center" name="userid" placeholder="ID">
+					<input type="text" style="text-align: center" name="amount" placeholder="Requested Amount">
                     <input type="text" style="text-align: center" name="description" placeholder="Description">
                     <input type="text" style="text-align: center" name="status" placeholder="Status">
                     <button style="background-color: #A1A1B9">Submit</button>

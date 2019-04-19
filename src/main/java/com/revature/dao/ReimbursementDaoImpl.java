@@ -76,10 +76,32 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 	}
 
 	@Override
-	public Reimbursement updateReimbursement(Reimbursement toBeUpdated) {
-		// Reimbursement Auto-generated method stub
+	public Reimbursement updateReimbursement(String userid, String amount, String description, String status ) {
+		System.out.println(userid);
+		System.out.println(amount);
+		System.out.println(description);
+		System.out.println(status);
+		//get connection
+		try (Connection conn = ConnectionFactory.getConnection()){
+		//prepare my statement
+
+			Statement stmt = conn.createStatement();
+		//get results set
+			System.out.println(userid);
+			System.out.println(description);
+			ResultSet rs = stmt.executeQuery("INSERT INTO REIMBURSEMENT (ID, AMOUNT, DESCRIPTION, STATUS) VALUES ('"+userid+"','"+amount+"','"+description+"','"+status+"')");
+			rs.next();
+			
+			//verify a row is returned
+			System.out.println(rs);
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
 		return null;
 	}
+	
 
 	@Override
 	public long deleteReimbursement(Reimbursement... toBeDeleted) {

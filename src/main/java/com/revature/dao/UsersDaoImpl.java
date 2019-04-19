@@ -103,19 +103,13 @@ public class UsersDaoImpl implements UsersDao {
 				System.out.println(temp);
 				return temp;
 
-			} else {
-
-				response.sendRedirect("frontPage.html");
-			}
+			} 
 
 			// return Users to LoginServlet
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} 
 		return null;
 	}
 
@@ -168,6 +162,7 @@ public class UsersDaoImpl implements UsersDao {
 	//get connection
 	try (Connection conn = ConnectionFactory.getConnection()){
 	//prepare my statement
+
 		Statement stmt = conn.createStatement();
 	//get results set
 		System.out.println(login);

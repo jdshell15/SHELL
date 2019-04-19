@@ -6,19 +6,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.dao.ReimbursementDaoImpl;
 import com.revature.dao.UsersDaoImpl;
+import com.revature.users.Reimbursement;
 import com.revature.users.Users;
 
 /**
- * Servlet implementation class UserUpdateServlet
+ * Servlet implementation class UserReimbursementServlet
  */
-public class UserUpdateServlet extends HttpServlet {
+public class UserReimbursementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserUpdateServlet() {
+    public UserReimbursementServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,31 +37,16 @@ public class UserUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String firstname = request.getParameter("firstname");
-		String lastname = request.getParameter("lastname");
-		String password = request.getParameter("password");
-		String login = request.getParameter("login");
+		String userid = request.getParameter("userid");
+		String amount = request.getParameter("amount");
+		String description = request.getParameter("description");
+		String status = request.getParameter("status");
 
 	
-			UsersDaoImpl update = new UsersDaoImpl();
-			Users updateMyUser = update.updateUsers(firstname,lastname,password,login);
-			System.out.println(updateMyUser);
-			response.sendRedirect("UserHome.jsp");
-}}
+		ReimbursementDaoImpl submit = new ReimbursementDaoImpl();
+			Reimbursement submitMyRequest = submit.updateReimbursement(userid,amount,description,status);
+			System.out.println(submitMyRequest);
+			response.sendRedirect("UserHome.jsp");	
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
