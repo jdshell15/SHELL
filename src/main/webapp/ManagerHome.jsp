@@ -74,39 +74,24 @@
 
 
 	</div>
-
-	<div id="login">
-		<form method="post" action="/project1.0/UserUpdateServlet">
-			<input class="form-control" type="text" name="firstname"
-				placeholder="Enter First Name" style="text-align: center"> <input
-				class="form-control" type="text" name="lastname"
-				placeholder="Enter Last Name" style="text-align: center"> <input
-				class="form-control" type="password" name="password"
-				placeholder="Enter Password" style="text-align: center"> <input
-				class="form-control" type="text" name="login"
-				placeholder="Enter Login Name" style="text-align: center">
-			<button>Update</button>
-		</form>
-	</div>
-<br><br><br>
-<form>
-<div class="container-fluid" style="align:center">
+<br><br><br><br><br>
+	<div class="container-fluid">
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-12">
+            <div class="col-6">
                 <form>
-               		
-                    <input type="number" style="text-align: center" name="UserId" placeholder="ID">
-					<input type="number" style="text-align: center" name="amount" placeholder="Requested Amount">
-                    <input type="text" style="text-align: center" name="description" placeholder="Description">
-                    <input type="text" style="text-align: center" name="status" placeholder="Status">
+               		 <input type="number" style="text-align: center" name="id" placeholder="Reimbursment ID">
+                    <input type="text" style="text-align: center" name="pending" placeholder="Approve/Deny">
+
+                    
                     <button style="background-color: #A1A1B9">Submit</button>
                 </form>
             </div>
             <div class="col-3"></div>
         </div>
     </div>
-</form>
+
+
 	<!--  <script src="./index.js"></script>-->
 </body>
 </html>

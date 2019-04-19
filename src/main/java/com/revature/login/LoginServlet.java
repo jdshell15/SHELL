@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 		String type = myUser.getUsertype();
 		
 		if(type.equals("Manager")) {
-			response.sendRedirect("ManagerHome.html");
+			response.sendRedirect("ManagerHome.jsp");
 			
 		}else {
 
