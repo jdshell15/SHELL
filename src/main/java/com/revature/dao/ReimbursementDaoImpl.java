@@ -103,14 +103,14 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 	}
 	
 @Override
-public Reimbursement approveDeny(String id, String appD) {
+public Reimbursement approveDeny(String id, String appD, String manager) {
 	try (Connection conn = ConnectionFactory.getConnection()){
 	//prepare my statement
 
 		Statement stmt = conn.createStatement();
 	//get results set
 
-		ResultSet rs = stmt.executeQuery("UPDATE REIMBURSEMENT SET STATUS='"+appD+"' WHERE REQUESTS='"+id+"'");
+		ResultSet rs = stmt.executeQuery("UPDATE REIMBURSEMENT SET MANAGER='"+manager+"',STATUS='"+appD+"' WHERE REQUESTS='"+id+"'");
 		rs.next();
 		
 		//verify a row is returned

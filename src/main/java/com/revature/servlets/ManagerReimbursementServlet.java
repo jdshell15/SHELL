@@ -28,9 +28,10 @@ public class ManagerReimbursementServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String appD = request.getParameter("pending");
+		String manager = request.getParameter("manager");
 		
 		ReimbursementDaoImpl update = new ReimbursementDaoImpl();
-		Reimbursement updateMyUser = update.approveDeny(id,appD);
+		Reimbursement updateMyUser = update.approveDeny(id,appD,manager);
 		System.out.println(updateMyUser);
 		response.sendRedirect("ManagerHome.jsp");
 	}

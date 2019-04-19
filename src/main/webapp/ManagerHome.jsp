@@ -82,7 +82,7 @@
                 <form  method="post" action="/project1.0/ManagerReimbursementServlet">
                		 <input type="text" style="text-align: center" name="id" placeholder="Reimbursment ID">
                     <input type="text" style="text-align: center" name="pending" placeholder="Approve/Deny">
-
+					<input type="text" style="text-align: center" name="manager" placeholder="Manager ID">
                     
                     <button style="background-color: #A1A1B9">Submit</button>
                 </form>
