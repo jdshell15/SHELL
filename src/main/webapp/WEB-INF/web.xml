@@ -11,6 +11,14 @@
   	<display-name>UserServlet</display-name>
   	<servlet-class>jbdc.UserServlet</servlet-class>
   </servlet>
+<servlet>
+  	<servlet-name>UserHomeServlet</servlet-name>
+  	<display-name>UserHomeServlet</display-name>
+  	<servlet-class>com.revature.servlets.UserHomeServlet</servlet-class>
+  </servlet> 
+ 
+ 
+ 
  
   <servlet>
   	<servlet-name>LoginServlet</servlet-name>
@@ -23,10 +31,13 @@
   	<servlet-class>com.revature.web.DispatcherServlet</servlet-class>
   </servlet>
 
+
   <servlet-mapping>
   	<servlet-name>UserServlet</servlet-name>
   	<url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
+
+
 
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
@@ -36,6 +47,10 @@
   <servlet-mapping>
   	<servlet-name>DispatcherServlet</servlet-name>
   	<url-pattern>/DispatcherServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserHomeServlet</servlet-name>
+  	<url-pattern>/UserHomeServlet</url-pattern>
   </servlet-mapping>
   
 </web-app>

@@ -30,13 +30,20 @@ public class LoginServlet extends HttpServlet {
 		UsersDaoImpl attempt = new UsersDaoImpl();
 		//attempt.getUsersByLogininfo(username,password,response); // returns Users object
 		Users myUser = attempt.getUsersByLogininfo(username,password,response);
+		System.out.println(myUser);
+		if(myUser == null) {
+			response.sendRedirect("frontPage.html");
+		}else {
 		String type = myUser.getUsertype();
 		
 		if(type.equals("Manager")) {
 			response.sendRedirect("ManagerHome.html");
+			
 		}else {
+			
 			response.sendRedirect("UserHome.html");
-		}}}
+
+		}}}}
 
 		catch(IOException e) {
 		}

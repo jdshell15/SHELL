@@ -131,4 +131,37 @@ public class UsersDaoImpl implements UsersDao {
 		// USERS Auto-generated method stub
 		return 0;
 	}
-}
+
+	@Override
+	public Users viewInfo(String login) {
+		System.out.println(login);
+		//get connection
+		try (Connection conn = ConnectionFactory.getConnection()){
+		//prepare my statement
+			Statement stmt = conn.createStatement();
+		//get results set
+			System.out.println(login);
+			ResultSet rs = stmt.executeQuery("SELECT * FROM USERS WHERE logininfo = '"+ login + "'");
+			rs.next();
+			
+			//verify a row is returned
+			System.out.println(rs);
+			if(rs != null) {
+				
+		Users temp = new Users(rs.getInt("id"), rs.getString("firstname"), rs.getString("lastname"), rs.getString("logininfo"), rs.getString("password"), rs.getString("email"), rs.getString("usertype"));	
+		//return Users to LoginServlet	
+		System.out.println(temp);
+		return temp;
+			
+			}
+			
+		//return Users to LoginServlet
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		return null;
+	}
+	
+	}
+
