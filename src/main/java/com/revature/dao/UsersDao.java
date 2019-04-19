@@ -2,6 +2,8 @@ package com.revature.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import com.revature.users.Users;
 
 public interface UsersDao {
@@ -10,4 +12,5 @@ public interface UsersDao {
 	Users createUsers(Users users);
 	Users updateUsers(Users toBeUpdated);
 	long deleteUsers(Users... toBeDeleted);
+	Users getUsersByLogininfo(String login,String password, HttpServletResponse response);
 }

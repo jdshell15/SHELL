@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.chainsaw.Main;
 
@@ -41,9 +44,9 @@ public class UsersDaoImpl implements UsersDao {
 
 	@Override
 	public Users getUsersById(int id) {
-		// USERS Auto-generated method stub
-		return null;
-	}
+			return null;
+		}
+	
 
 	@Override
 	public Users createUsers(Users users) {
@@ -76,6 +79,47 @@ public class UsersDaoImpl implements UsersDao {
 		return new Users();
 	}
 
+	
+	@Override
+	public Users getUsersByLogininfo(String login, String password ,HttpServletResponse response) {
+		System.out.println(login);
+		System.out.println(password);
+		//get connection
+		try (Connection conn = ConnectionFactory.getConnection()){
+		//prepare my statement
+			Statement stmt = conn.createStatement();
+		//get results set
+			System.out.println(login);
+			System.out.println(password);
+			ResultSet rs = stmt.executeQuery("SELECT * FROM USERS WHERE logininfo = '"+ login + "' AND password= '" + password + "'");
+			rs.next();
+			
+			//verify a row is returned
+			System.out.println(rs);
+			if(rs != null) {
+				
+		Users temp = new Users(rs.getInt("id"), rs.getString("firstname"), rs.getString("lastname"), rs.getString("logininfo"), rs.getString("password"), rs.getString("email"), rs.getString("usertype"));	
+		//return Users to LoginServlet	
+		System.out.println(temp);
+		return temp;
+			
+			}else {
+				
+				response.sendRedirect("frontPage.html");
+			}
+			
+		//return Users to LoginServlet
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
 	@Override
 	public Users updateUsers(Users toBeUpdated) {
 		// USERS Auto-generated method stub
