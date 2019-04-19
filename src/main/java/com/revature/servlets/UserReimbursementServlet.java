@@ -40,7 +40,7 @@ public class UserReimbursementServlet extends HttpServlet {
 		String userid = request.getParameter("userid");
 		String amount = request.getParameter("amount");
 		String description = request.getParameter("description");
-		String status = request.getParameter("status");
+		String status = "pending";
 
 	
 		ReimbursementDaoImpl submit = new ReimbursementDaoImpl();

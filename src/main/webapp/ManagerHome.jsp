@@ -49,7 +49,7 @@
 
 
 
-		<form method="post" action="/project1.0/UserHomeServlet">
+		<form method="post" action="/project1.0/LogOutServlet">
 			<button>Logout</button>
 		</form>
 
@@ -79,8 +79,8 @@
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-                <form>
-               		 <input type="number" style="text-align: center" name="id" placeholder="Reimbursment ID">
+                <form  method="post" action="/project1.0/ManagerReimbursementServlet">
+               		 <input type="text" style="text-align: center" name="id" placeholder="Reimbursment ID">
                     <input type="text" style="text-align: center" name="pending" placeholder="Approve/Deny">
 
                     

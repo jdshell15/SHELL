@@ -89,7 +89,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 		//get results set
 			System.out.println(userid);
 			System.out.println(description);
-			ResultSet rs = stmt.executeQuery("INSERT INTO REIMBURSEMENT (ID, AMOUNT, DESCRIPTION, STATUS) VALUES ('"+userid+"','"+amount+"','"+description+"','"+status+"')");
+			ResultSet rs = stmt.executeQuery("INSERT INTO REIMBURSEMENT (REQUESTS, AMOUNT, DESCRIPTION, STATUS) VALUES ('"+userid+"','"+amount+"','"+description+"','pending')");
 			rs.next();
 			
 			//verify a row is returned
@@ -102,6 +102,29 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 		return null;
 	}
 	
+@Override
+public Reimbursement approveDeny(String id, String appD) {
+	try (Connection conn = ConnectionFactory.getConnection()){
+	//prepare my statement
+
+		Statement stmt = conn.createStatement();
+	//get results set
+
+		ResultSet rs = stmt.executeQuery("UPDATE REIMBURSEMENT SET STATUS='"+appD+"' WHERE REQUESTS='"+id+"'");
+		rs.next();
+		
+		//verify a row is returned
+		System.out.println(rs);
+		
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} 
+	return null;
+}
+
+
+
 
 	@Override
 	public long deleteReimbursement(Reimbursement... toBeDeleted) {

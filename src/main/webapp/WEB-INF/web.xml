@@ -48,6 +48,18 @@
   	<description></description>
   	<servlet-class>com.revature.servlets.UserReimbursementServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogOutServlet</servlet-name>
+  	<display-name>LogOutServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.login.LogOutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ManagerReimbursementServlet</servlet-name>
+  	<display-name>ManagerReimbursementServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.ManagerReimbursementServlet</servlet-class>
+  </servlet>
 
 
   <servlet-mapping>
@@ -81,6 +93,14 @@
   <servlet-mapping>
   	<servlet-name>UserReimbursementServlet</servlet-name>
   	<url-pattern>/UserReimbursementServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogOutServlet</servlet-name>
+  	<url-pattern>/LogOutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerReimbursementServlet</servlet-name>
+  	<url-pattern>/ManagerReimbursementServlet</url-pattern>
   </servlet-mapping>
   
 </web-app>

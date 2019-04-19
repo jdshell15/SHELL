@@ -49,7 +49,7 @@
 
 
 
-		<form method="post" action="/project1.0/UserHomeServlet">
+		<form method="post" action="/project1.0/LogOutServlet">
 			<button>Logout</button>
 		</form>
 
@@ -97,7 +97,7 @@
                     <input type="text" style="text-align: center" name="userid" placeholder="ID">
 					<input type="text" style="text-align: center" name="amount" placeholder="Requested Amount">
                     <input type="text" style="text-align: center" name="description" placeholder="Description">
-                    <input type="text" style="text-align: center" name="status" placeholder="Status">
+                    
                     <button style="background-color: #A1A1B9">Submit</button>
                 </form>
             </div>

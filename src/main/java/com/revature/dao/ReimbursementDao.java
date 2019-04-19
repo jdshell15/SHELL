@@ -12,6 +12,6 @@ public interface ReimbursementDao {
 		Reimbursement createReimbursement(Reimbursement reimbursement);
 		Reimbursement updateReimbursement(String userid, String amount, String description, String status );
 		long deleteReimbursement(Reimbursement... toBeDeleted);
-	
+		Reimbursement approveDeny(String id,String appD);
 
 }
