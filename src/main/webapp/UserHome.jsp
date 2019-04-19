@@ -36,13 +36,19 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-
+	<script type="text/javascript">
+	window.history.forward();
+    function noBack()
+    {
+        window.history.forward();
+    }
+	</script>
 <link rel="stylesheet" type="text/css" href="design.css">
 <meta charset="ISO-8859-1">
 <title>User Home Page</title>
 </head>
-<body>
-<body>
+
+<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
 
 
 	<div class="container-fluid" style="text-align: center">
@@ -69,6 +75,24 @@
 			</thead>
 			<tbody id="userTable"></tbody>
 		</table>
+		<br>
+				<table id="customers">
+			<thead>
+				<tr>
+
+					<th>ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Password</th>
+					<th>User Type</th>
+					<th>Login Info</th>
+
+
+				</tr>
+			</thead>
+			<tbody id="userTable"></tbody>
+		</table>
 <br><br>
 
 	</div>
@@ -86,7 +110,7 @@
 			<button>Update</button>
 		</form>
 	</div>
-
+<br><br><br><br><br><br><br><br><br>
 <form method="post" action="/project1.0/UserReimbursementServlet">
 <div class="container-fluid" style="align:center">
         <div class="row">
