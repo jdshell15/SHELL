@@ -22,10 +22,9 @@ public class ConnectionFactoryTest {
 		ConnectionFactory.getConnection();
 	}
 	
+	@Test
+	public void testUpdate() {
+		dao.updateUsers("James", "Shell", "password", "MrShell");
+	}
 	
-	  @Test 
-	  public void getAllUsersShouldReturn() {
-		  List<Users> users =
-	  dao.getAllUsers(); assertEquals(1, users.size()); }
-	 
 }

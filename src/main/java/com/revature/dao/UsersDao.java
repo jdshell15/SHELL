@@ -10,7 +10,7 @@ public interface UsersDao {
 	List<Users> getAllUsers();
 	Users getUsersById(int id);
 	Users createUsers(Users users);
-	Users updateUsers(Users toBeUpdated);
+	Users updateUsers(String firstname,String lastname,String password,String login);
 	long deleteUsers(Users... toBeDeleted);
 	Users getUsersByLogininfo(String login,String password, HttpServletResponse response);
 	Users viewInfo(String login);

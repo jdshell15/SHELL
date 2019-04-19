@@ -40,8 +40,10 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("ManagerHome.html");
 			
 		}else {
-			
-			response.sendRedirect("UserHome.html");
+
+			request.getSession().setAttribute("currentUser", username);
+			request.getRequestDispatcher("/UserHome.jsp").forward(request, response);
+			//response.sendRedirect("UserHome.html");
 
 		}}}}
 

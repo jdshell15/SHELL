@@ -30,6 +30,18 @@
   	<display-name>DispatcherServlet</display-name>
   	<servlet-class>com.revature.web.DispatcherServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UserUpdate</servlet-name>
+  	<display-name>UserUpdate</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.UserUpdate</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserUpdateServlet</servlet-name>
+  	<display-name>UserUpdateServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.UserUpdateServlet</servlet-class>
+  </servlet>
 
 
   <servlet-mapping>
@@ -51,6 +63,14 @@
   <servlet-mapping>
   	<servlet-name>UserHomeServlet</servlet-name>
   	<url-pattern>/UserHomeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserUpdate</servlet-name>
+  	<url-pattern>/UserUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserUpdateServlet</servlet-name>
+  	<url-pattern>/UserUpdateServlet</url-pattern>
   </servlet-mapping>
   
 </web-app>
