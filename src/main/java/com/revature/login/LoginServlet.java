@@ -37,13 +37,18 @@ public class LoginServlet extends HttpServlet {
 		String type = myUser.getUsertype();
 		
 		if(type.equals("Manager")) {
-			response.sendRedirect("ManagerHome.jsp");
+			//response.sendRedirect("ManagerHome.jsp");
+			System.out.println(username + " made it this far on login servlet:manager");
+			request.getSession().setAttribute("currentUser", myUser.getId());
+			request.getRequestDispatcher("/ManagerHome.jsp").forward(request, response);
+			
 			
 		}else {
-
-			request.getSession().setAttribute("currentUser", username);
+			//response.sendRedirect("UserHome.jsp");
+			System.out.println(username + " made it this far on login:user");
+			request.getSession().setAttribute("currentUser", myUser.getId());
 			request.getRequestDispatcher("/UserHome.jsp").forward(request, response);
-			//response.sendRedirect("UserHome.html");
+			
 
 		}}}}
 

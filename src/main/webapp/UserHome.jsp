@@ -50,6 +50,7 @@
 
 <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
 
+<%=session.getAttribute("currentUser")%>!
 
 	<div class="container-fluid" style="text-align: center">
 
@@ -70,13 +71,14 @@
 					<th>Status</th>
 					<th>Manager ID</th>
 				
-
 				</tr>
 			</thead>
-			<tbody id="userTable"></tbody>
+			<tbody id="userReTable"></tbody>
 		</table>
+		
 		<br>
-				<table id="customers">
+		
+		<table id="customers">
 			<thead>
 				<tr>
 
@@ -88,12 +90,11 @@
 					<th>User Type</th>
 					<th>Login Info</th>
 
-
 				</tr>
 			</thead>
-			<tbody id="userTable"></tbody>
+			<tbody id="userInfoTable"></tbody>
 		</table>
-<br><br>
+		<br><br>
 
 	</div>
 

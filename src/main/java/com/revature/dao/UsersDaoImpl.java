@@ -1,6 +1,5 @@
 package com.revature.dao;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,9 +16,14 @@ import com.revature.users.Users;
 import com.revature.utility.ConnectionFactory;
 
 public class UsersDaoImpl implements UsersDao {
-
+	
 	@Override
 	public List<Users> getAllUsers() {
+		return getAllUsers("");
+	}
+
+	@Override
+	public List<Users> getAllUsers(String user) {
 		List<Users> users = new ArrayList<>();
 		try (Connection conn = ConnectionFactory.getConnection()) {
 			// create our statement to communicate with the database
@@ -79,6 +83,7 @@ public class UsersDaoImpl implements UsersDao {
 
 	@Override
 	public Users getUsersByLogininfo(String login, String password, HttpServletResponse response) {
+	
 		System.out.println(login);
 		System.out.println(password);
 		// get connection

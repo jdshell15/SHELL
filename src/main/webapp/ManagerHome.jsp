@@ -54,6 +54,7 @@
 <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();"
 	onUnload="">
 
+<%=session.getAttribute("currentUser")%>!
 
 	<div class="container-fluid" style="text-align: center">
 
@@ -62,7 +63,13 @@
 		<form method="post" action="/project1.0/LogOutServlet">
 			<button>Logout</button>
 		</form>
+		
+		
+<!-- 		<form method="post" action="/project1.0/LogOutServlet">
+			<button>Populate Page</button>
+		</form> -->
 
+<p id ="ALLOFIT"> </p>
 
 		<table id="customers">
 			<thead>
@@ -73,13 +80,12 @@
 					<th>Last Name</th>
 					<th>Email</th>
 					<th>Password</th>
-					<th>User Type</th>
 					<th>Login Info</th>
-
+					<th>User Type</th>
 
 				</tr>
 			</thead>
-			<tbody id="userTable"></tbody>
+			<tbody id="userInfoTable"></tbody>
 		</table>
 		<br>
 		<table id="customers">
@@ -123,6 +129,6 @@
 	</div>
 
 
-	<!--  <script src="./index.js"></script>-->
+	<script src="./manager.js"></script>
 </body>
 </html>

@@ -14,5 +14,6 @@ public interface UsersDao {
 	long deleteUsers(Users... toBeDeleted);
 	Users getUsersByLogininfo(String login,String password, HttpServletResponse response);
 	Users viewInfo(String login);
+	List<Users> getAllUsers(String username);
 
 }

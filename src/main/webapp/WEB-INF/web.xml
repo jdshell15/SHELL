@@ -30,6 +30,13 @@
   	<display-name>DispatcherServlet</display-name>
   	<servlet-class>com.revature.web.DispatcherServlet</servlet-class>
   </servlet>
+  
+    <servlet>
+  	<servlet-name>Users</servlet-name>
+  	<servlet-class>com.revature.web.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  
   <servlet>
   	<servlet-name>UserUpdate</servlet-name>
   	<display-name>UserUpdate</display-name>
@@ -60,6 +67,12 @@
   	<description></description>
   	<servlet-class>com.revature.servlets.ManagerReimbursementServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>GetAllUserInfo</servlet-name>
+  	<display-name>GetAllUserInfo</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.GetAllUserInfo</servlet-class>
+  </servlet>
 
 
   <servlet-mapping>
@@ -76,8 +89,14 @@
   
   <servlet-mapping>
   	<servlet-name>DispatcherServlet</servlet-name>
-  	<url-pattern>/DispatcherServlet</url-pattern>
+  	<url-pattern>/manager</url-pattern>
   </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>Users</servlet-name>
+  	<url-pattern>/users</url-pattern>
+  </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>UserHomeServlet</servlet-name>
   	<url-pattern>/UserHomeServlet</url-pattern>
@@ -101,6 +120,10 @@
   <servlet-mapping>
   	<servlet-name>ManagerReimbursementServlet</servlet-name>
   	<url-pattern>/ManagerReimbursementServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetAllUserInfo</servlet-name>
+  	<url-pattern>/GetAllUserInfo</url-pattern>
   </servlet-mapping>
   
 </web-app>

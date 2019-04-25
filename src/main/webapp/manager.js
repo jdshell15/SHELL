@@ -1,11 +1,11 @@
 window.onload = () =>{
-	getAllInfo();
+	getAllUsers();
 	//createTodo();
 	//document.getElementById("createTodoBtn").addEventListener("click",createTodo);
 }
 
 
-const getAllInfo = () => {
+const getAllUsers = () => {
 	// step 1: create an XMLHttpRequest object
 	const xhr = new XMLHttpRequest();
 	
@@ -17,23 +17,31 @@ const getAllInfo = () => {
 		if(xhr.status === 200 && xhr.readyState === 4){
 			const json = xhr.responseText;
 			console.log(json);
-			populateInfoTable(JSON.parse(json));
+			
+			//popTest(JSON.parse(json));
+			populateUsersTable(JSON.parse(json));
 		}
 		
 	};
 	
 	// step 3: we call xhr.open(), passing in 2 strings for the HTTP MEthod and
 	// URL
-	xhr.open("GET","http://localhost:8088/project1.0/api/user");
-	
+	console.log("just before xhr.open");
+	xhr.open("GET","http://localhost:8088/project1.0/users");
+	console.log("just after xhr.open");
 	// step 4: call the xhr.send() to actually fire off your HTTP request
 	xhr.send();
 }
 
+const popTest = (listOfUsers) => {
+	
+	document.getElementById("ALLOFIT").innerHTML = listOfUsers[0].firstname;
 
-const populateInfoTable = (listOfInfo) => {
+}
+
+const populateUsersTable = (listOfUsers) => {
 	// the for...of loop is JavaScripts version of the enchanced for loop
-	for(let user of listOfInfo){
+	for(let user of listOfUsers){
 		
 		// create a table cell for each property of our object
 		const tdId = document.createElement("td");
@@ -48,12 +56,12 @@ const populateInfoTable = (listOfInfo) => {
 		
 		// set the value of each cell
 		tdId.textContent = user.id;
-		tdFirstName.textContent = user.FirstName;
-		tdLastName.textContent = user.LastName;
-		tdEmail.textContent = user.Email;
-		tdPassword.textContent = user.Password;
-		tdUserType.textContent = user.UserType;
-		tdLoginInfo.textContent = user.LoginInfo;
+		tdFirstName.textContent = user.firstname;
+		tdLastName.textContent = user.lastname;
+		tdEmail.textContent = user.email;
+		tdPassword.textContent = user.password;
+		tdUserType.textContent = user.usertype;
+		tdLoginInfo.textContent = user.logininfo;
 
 		
 		// create a row to be appended onto our table
@@ -81,7 +89,7 @@ const populateInfoTable = (listOfInfo) => {
 
 
 
-const createInfo = () => {
+const createUsers = () => {
 	// step 1: create the xhr object
 	const xhr = new XMLHttpRequest();
 	

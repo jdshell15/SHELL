@@ -15,15 +15,21 @@ public class UsersServiceImpl implements UsersService {
 	private final UsersDao dao = new UsersDaoImpl();
 	private final ObjectMapper mapper = new ObjectMapper();
 	
-	
-	
-	
 	@Override
 	public List<Users> getAllUsers(HttpServletRequest request, HttpServletResponse response) {
 		
 		System.out.println("We are inside the UsersServiceImpl");
-		// TODO Auto-generated method stub
+		//final String username = request.getSession().getAttribute("currentUser").toString();
+//
+//		if (username == null) {
+//			System.out.println("username was null");
+//			return dao.getAllUsers();
+		//}
 		return dao.getAllUsers();
+		
+		
+		// TODO Auto-generated method stub
+	
 	}
 
 	@Override
