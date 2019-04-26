@@ -10,8 +10,8 @@ public interface ReimbursementDao {
 		List<Reimbursement> getAllReimbursement();
 		Reimbursement getReimbursementById(int id);
 		Reimbursement createReimbursement(Reimbursement reimbursement);
-		Reimbursement updateReimbursement(Reimbursement toBeUpdated);
+		Reimbursement updateReimbursement(String userid, String amount, String description, String status,String manager );
 		long deleteReimbursement(Reimbursement... toBeDeleted);
-	
+		Reimbursement approveDeny(String id,String appD,String manager);
 
 }

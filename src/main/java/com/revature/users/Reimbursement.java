@@ -8,6 +8,7 @@ public class Reimbursement {
 	private String status;
 	private int manager;
 	
+	
 	public Reimbursement() {
 		
 	}
@@ -73,5 +74,15 @@ public class Reimbursement {
 	public void setManager(int manager) {
 		this.manager = manager;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Reimbursement [id=" + id + ", amount=" + amount + ", request=" + request + ", description="
+				+ description + ", status=" + status + ", manager=" + manager + "]";
+	}
+	
+	
 	
 }

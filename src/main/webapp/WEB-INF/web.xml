@@ -4,64 +4,136 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  	<servlet-name>UserControlServlet</servlet-name>
-  	<display-name>UserControlServlet</display-name>
-  	<description></description>
-  	<servlet-class>jbdc.UserControlServlet</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>UserControllerServlet</servlet-name>
-  	<display-name>UserControllerServlet</display-name>
-  	<description></description>
-  	<servlet-class>jbdc.UserControllerServlet</servlet-class>
-  </servlet>
+  
+  
   <servlet>
   	<servlet-name>UserServlet</servlet-name>
   	<display-name>UserServlet</display-name>
-  	<description></description>
   	<servlet-class>jbdc.UserServlet</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>TestServlet</servlet-name>
-  	<display-name>TestServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.revature.web.jdbc.TestServlet</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>TestServlet1</servlet-name>
-  	<display-name>TestServlet1</display-name>
-  	<description></description>
-  	<servlet-class>com.revature.web.jdbc.TestServlet</servlet-class>
-  </servlet>
+<servlet>
+  	<servlet-name>UserHomeServlet</servlet-name>
+  	<display-name>UserHomeServlet</display-name>
+  	<servlet-class>com.revature.servlets.UserHomeServlet</servlet-class>
+  </servlet> 
+ 
+ 
+ 
+ 
   <servlet>
   	<servlet-name>LoginServlet</servlet-name>
-  	<display-name>/LoginServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.revature.servlets.LoginServlet</servlet-class>
+  	<display-name>login</display-name>
+  	<servlet-class>com.revature.login.LoginServlet</servlet-class>
   </servlet>
-  <servlet-mapping>
-  	<servlet-name>UserControlServlet</servlet-name>
-  	<url-pattern>/UserControlServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>UserControllerServlet</servlet-name>
-  	<url-pattern>/UserControllerServlet</url-pattern>
-  </servlet-mapping>
+  <servlet>
+  	<servlet-name>DispatcherServlet</servlet-name>
+  	<display-name>DispatcherServlet</display-name>
+  	<servlet-class>com.revature.web.DispatcherServlet</servlet-class>
+  </servlet>
+  
+    <servlet>
+  	<servlet-name>Users</servlet-name>
+  	<servlet-class>com.revature.web.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet>
+  	<servlet-name>UserUpdate</servlet-name>
+  	<display-name>UserUpdate</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.UserUpdate</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserUpdateServlet</servlet-name>
+  	<display-name>UserUpdateServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.UserUpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserReimbursementServlet</servlet-name>
+  	<display-name>UserReimbursementServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.UserReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogOutServlet</servlet-name>
+  	<display-name>LogOutServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.login.LogOutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ManagerReimbursementServlet</servlet-name>
+  	<display-name>ManagerReimbursementServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.ManagerReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetAllUserInfo</servlet-name>
+  	<display-name>GetAllUserInfo</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.GetAllUserInfo</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetAllReimbursementInfo</servlet-name>
+  	<display-name>GetAllReimbursementInfo</display-name>
+  	<description></description>
+  	<servlet-class>com.revature.servlets.GetAllReimbursementInfo</servlet-class>
+  </servlet>
+
+
   <servlet-mapping>
   	<servlet-name>UserServlet</servlet-name>
   	<url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>TestServlet</servlet-name>
-  	<url-pattern>/TestServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>TestServlet1</servlet-name>
-  	<url-pattern>/TestServlet1</url-pattern>
-  </servlet-mapping>
+
+
+
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
-  	<url-pattern>/LoginServlet</url-pattern>
+  	<url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>DispatcherServlet</servlet-name>
+  	<url-pattern>/manager</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>Users</servlet-name>
+  	<url-pattern>/users</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>UserHomeServlet</servlet-name>
+  	<url-pattern>/UserHomeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserUpdate</servlet-name>
+  	<url-pattern>/UserUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserUpdateServlet</servlet-name>
+  	<url-pattern>/UserUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserReimbursementServlet</servlet-name>
+  	<url-pattern>/UserReimbursementServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogOutServlet</servlet-name>
+  	<url-pattern>/LogOutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManagerReimbursementServlet</servlet-name>
+  	<url-pattern>/ManagerReimbursementServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetAllUserInfo</servlet-name>
+  	<url-pattern>/GetAllUserInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetAllReimbursementInfo</servlet-name>
+  	<url-pattern>/GetAllReimbursementInfo</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

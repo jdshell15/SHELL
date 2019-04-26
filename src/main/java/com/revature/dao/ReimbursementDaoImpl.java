@@ -14,9 +14,11 @@ import com.revature.utility.ConnectionFactory;
 
 
 public class ReimbursementDaoImpl implements ReimbursementDao{
-
+	
+	
 	@Override
-	public List<Reimbursement> getAllReimbursement() {
+	public  List<Reimbursement> getAllReimbursement() {
+		
 		List<Reimbursement> reimbursement = new ArrayList<>();
 		try (Connection conn = ConnectionFactory.getConnection()){
 			// create our statement to communicate with the database
@@ -76,10 +78,55 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 	}
 
 	@Override
-	public Reimbursement updateReimbursement(Reimbursement toBeUpdated) {
-		// Reimbursement Auto-generated method stub
+	public Reimbursement updateReimbursement(String userid, String amount, String description, String status, String manager ) {
+		System.out.println(userid);
+		System.out.println(amount);
+		System.out.println(description);
+		System.out.println(status);
+		//get connection
+		try (Connection conn = ConnectionFactory.getConnection()){
+		//prepare my statement
+
+			Statement stmt = conn.createStatement();
+		//get results set
+			System.out.println(userid);
+			System.out.println(description);
+			ResultSet rs = stmt.executeQuery("INSERT INTO REIMBURSEMENT (REQUESTS, AMOUNT, DESCRIPTION, STATUS,MANAGER) VALUES ('"+userid+"','"+amount+"','"+description+"','pending','pending')");
+			rs.next();
+			
+			//verify a row is returned
+			System.out.println(rs);
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
 		return null;
 	}
+	
+@Override
+public Reimbursement approveDeny(String id, String appD, String manager) {
+	try (Connection conn = ConnectionFactory.getConnection()){
+	//prepare my statement
+
+		Statement stmt = conn.createStatement();
+	//get results set
+
+		ResultSet rs = stmt.executeQuery("UPDATE REIMBURSEMENT SET MANAGER='"+manager+"',STATUS='"+appD+"' WHERE REQUESTS='"+id+"'");
+		rs.next();
+		
+		//verify a row is returned
+		System.out.println(rs);
+		
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} 
+	return null;
+}
+
+
+
 
 	@Override
 	public long deleteReimbursement(Reimbursement... toBeDeleted) {
